@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="700dp"
     app:cardElevation="15dp"
     app:cardCornerRadius="20dp"
     android:layout_margin="20dp"
-    app:cardBackgroundColor="#1E88E5"
+    app:cardBackgroundColor="#E2EF80"
     tools:context=".AddProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/errorMsg"
@@ -22,16 +22,21 @@
             android:text="All fields are required"
             android:textColor="#FF0000"
             android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Added content description for accessibility -->
 
         <ImageView
             android:id="@+id/logoImageView"
-            android:layout_width="262dp"
-            android:layout_height="188dp"
+            android:layout_width="121dp"
+            android:layout_height="131dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="profile"
             android:src="@drawable/profile"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/errorMsg" />
 
@@ -39,26 +44,29 @@
             android:id="@+id/appNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Profile"
-            android:textSize="24sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
         <EditText
             android:id="@+id/profileNameEt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Enter Profile Name"
+            android:layout_marginTop="48dp"
+            android:background="#CDDC39"
             android:drawableStart="@drawable/profile"
             android:drawablePadding="10dp"
-            android:textSize="16sp"
+            android:hint="Enter Profile Name"
             android:padding="12dp"
-            android:background="@drawable/edittext_background"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appNameTxt" />
 
@@ -67,13 +75,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Enter Profile Email"
+            android:background="#CDDC39"
             android:drawableStart="@drawable/email"
             android:drawablePadding="10dp"
-            android:textSize="16sp"
-            android:padding="12dp"
+            android:hint="Enter Profile Email"
             android:inputType="textEmailAddress"
-            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profileNameEt" />
@@ -83,14 +91,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Enter DOB"
-            android:inputType="date"
+            android:background="#CDDC39"
             android:drawableStart="@drawable/calender"
             android:drawablePadding="10dp"
-            android:textSize="16sp"
+            android:hint="Enter DOB"
+            android:inputType="date"
             android:padding="12dp"
-            android:background="@drawable/edittext_background"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profileEmailEt" />
 
@@ -99,13 +108,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Enter Profile District"
+            android:background="#CDDC39"
             android:drawableStart="@drawable/location"
             android:drawablePadding="10dp"
-            android:textSize="16sp"
-            android:padding="12dp"
+            android:hint="Enter Profile District"
             android:inputType="text"
-            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profileDOBEt" />
@@ -115,32 +124,34 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Enter Profile Mobile"
+            android:background="#CDDC39"
             android:drawableStart="@drawable/phone"
             android:drawablePadding="10dp"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:background="@drawable/edittext_background"
+            android:hint="Enter Profile Mobile"
             android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profileDistrictEt" />
-
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileDistrictEt" />
 
         <Button
             android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="ADD PROFILE"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#0B1240"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="#97E043"
             android:padding="12dp"
+            android:text="ADD PROFILE"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/profilemobileEt" />
+            app:layout_constraintTop_toBottomOf="@id/profilemobileEt"
+            app:layout_constraintWidth_percent="0.8" /> <!-- Set button width to 80% of parent -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
+
